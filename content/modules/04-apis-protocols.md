@@ -4,7 +4,7 @@ title: APIs and protocols
 track: platform-90-day
 block: 2
 order: 4
-weeks: [5, 6]
+weeks: [5]
 estimated_hours: 14
 icon: plug
 summary: >

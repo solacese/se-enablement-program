@@ -10,7 +10,7 @@
 	let open = $state(true);
 </script>
 
-<section id="step-{id}" class="not-prose my-5 scroll-mt-24 overflow-hidden rounded-2xl border border-fog/80 bg-white">
+<section id="step-{id}" class="my-5 scroll-mt-24 overflow-hidden rounded-2xl border border-fog/80 bg-white">
 	<button type="button" class="flex w-full items-center gap-4 px-4 py-3.5 text-left sm:px-5" onclick={() => (open = !open)} aria-expanded={open}>
 		<span class="grid size-9 shrink-0 place-items-center rounded-full bg-night text-sm font-bold text-green-400">{index >= 0 ? index + 1 : '•'}</span>
 		<span class="min-w-0 flex-1">

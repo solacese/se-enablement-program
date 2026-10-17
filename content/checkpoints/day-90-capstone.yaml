@@ -12,6 +12,8 @@ modules:
   - ha-dr
   - solace-cloud
   - apis-protocols
+  - queue-types
+  - authentication-authorization
   - micro-integrations
   - event-portal
   - insights-distributed-tracing

@@ -3,7 +3,7 @@ id: event-portal
 title: Event Portal
 track: platform-90-day
 block: 2
-order: 6
+order: 8
 weeks: [8]
 estimated_hours: 8
 icon: map

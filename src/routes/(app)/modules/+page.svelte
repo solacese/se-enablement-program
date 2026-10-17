@@ -18,7 +18,7 @@
 
 <svelte:head><title>Modules · Solace SE Journey</title></svelte:head>
 
-<PageHeader eyebrow="The Solace Platform in 90 days" title="Modules" subtitle="Ten hands-on modules in three blocks. Each one ends with an exit proof you can show working." />
+<PageHeader eyebrow="The Solace Platform in 90 days" title="Modules" subtitle="{all.length} hands-on modules in {blocks.length} blocks. Each one ends with an exit proof you can show working." />
 
 <div class="mt-8 space-y-12">
 	{#each blocks as b, bi (b.id)}

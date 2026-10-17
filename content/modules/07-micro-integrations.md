@@ -3,8 +3,8 @@ id: micro-integrations
 title: Micro-Integrations
 track: platform-90-day
 block: 2
-order: 5
-weeks: [7]
+order: 7
+weeks: [8]
 estimated_hours: 8
 icon: puzzle
 summary: >
@@ -13,7 +13,7 @@ summary: >
 why_it_matters: >
   Customers have systems that will never speak SMF. Micro-Integrations answer
   "how do we get our existing data in?" without a custom build.
-prerequisites: [apis-protocols]
+prerequisites: [authentication-authorization]
 exit_proof: Events flow from a source system into a queue.
 evidence_types: [notes, screenshot, config, recording_link]
 checkpoint: day-60

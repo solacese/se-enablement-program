@@ -20,7 +20,7 @@ blocks:
     days: [31, 60]
     theme: Build and integrate
     tagline: Every protocol, every system, one governed design.
-    modules: [apis-protocols, micro-integrations, event-portal]
+    modules: [apis-protocols, queue-types, authentication-authorization, micro-integrations, event-portal]
     checkpoint: day-60
   - id: block-3
     number: 3
@@ -45,6 +45,7 @@ outcomes:
   - Install and operate an Event Broker in any environment, and explain and demo HA vs. DR
   - Position self-managed, Solace Cloud and hybrid deployments
   - Build across protocols and APIs, bring existing systems in with Micro-Integrations, and govern designs in Event Portal
+  - Choose the right queue type for each consumer pattern, and secure clients with authentication and ACLs
   - Show observability with Insights and Distributed Tracing
   - Build an agentic AI workflow with Solace Agent Mesh
   - Explain how SAP AEM and Boomi Event Streams Enterprise relate to the direct Solace offering

@@ -3,7 +3,7 @@ id: solace-agent-mesh
 title: Solace Agent Mesh
 track: platform-90-day
 block: 3
-order: 8
+order: 10
 weeks: [10, 11]
 estimated_hours: 14
 icon: sparkles

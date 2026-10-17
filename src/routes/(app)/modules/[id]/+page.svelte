@@ -10,7 +10,6 @@
 	provideSteps(() => data.module.steps);
 
 	const weeks = $derived(m.weeks.length > 1 ? `Weeks ${m.weeks[0]}–${m.weeks.at(-1)}` : `Week ${m.weeks[0]}`);
-	const totalMinutes = $derived(m.steps.reduce((n, s) => n + (s.minutes ?? 0), 0));
 </script>
 
 <svelte:head><title>{m.title} · Solace SE Journey</title></svelte:head>
@@ -60,7 +59,6 @@
 					<div>
 						<p class="eyebrow text-[10px] text-slate-ink">Estimated time</p>
 						<p class="font-bold">{m.estimated_hours ? `About ${m.estimated_hours} hours` : '—'} <span class="font-medium text-slate-ink">· {weeks}</span></p>
-						{#if totalMinutes}<p class="text-xs text-slate-ink">Steps add up to about {Math.round(totalMinutes / 60)} hours hands-on</p>{/if}
 					</div>
 				</div>
 				<div class="card p-5">

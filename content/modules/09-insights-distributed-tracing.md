@@ -3,7 +3,7 @@ id: insights-distributed-tracing
 title: Insights / Distributed Tracing
 track: platform-90-day
 block: 3
-order: 7
+order: 9
 weeks: [9]
 estimated_hours: 10
 icon: pulse

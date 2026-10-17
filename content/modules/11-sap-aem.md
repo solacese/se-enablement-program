@@ -3,7 +3,7 @@ id: sap-aem
 title: SAP AEM
 track: platform-90-day
 block: 3
-order: 9
+order: 11
 weeks: [12]
 estimated_hours: 6
 icon: handshake

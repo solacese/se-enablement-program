@@ -150,3 +150,9 @@
 		@apply rounded-md bg-deep-100/60 px-1.5 py-0.5 font-medium text-deep before:content-none after:content-none;
 	}
 }
+
+/* Inline code is styled as a chip, so drop typography's decorative backticks. Unlayered so it wins. */
+.prose code::before,
+.prose code::after {
+	content: none;
+}

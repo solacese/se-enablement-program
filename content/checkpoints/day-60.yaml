@@ -5,9 +5,9 @@ day: 60
 format: quiz
 evaluator_role: Senior SE
 description: >
-  A one-on-one live quiz with a senior SE covering APIs and protocols,
-  Micro-Integrations and Event Portal.
-modules: [apis-protocols, micro-integrations, event-portal]
+  A one-on-one live quiz with a senior SE covering APIs and protocols, queue types,
+  authentication and authorization, Micro-Integrations and Event Portal.
+modules: [apis-protocols, queue-types, authentication-authorization, micro-integrations, event-portal]
 retake_window_days: 10
 general_questions:
   - Walk me through your setup. What's running where?
@@ -18,6 +18,16 @@ question_bank:
     - Show me one event published over one protocol and consumed over two others. What does the broker do in between?
     - When would you recommend a native SMF API over an open protocol like MQTT or AMQP?
     - How do message properties and payloads map across protocols?
+  queue-types:
+    - Show me an exclusive queue failing over. What happened to message order?
+    - When would you recommend a non-exclusive queue, and what does the customer give up?
+    - How do partitioned queues keep order per key while still scaling out?
+    - Where does a message go after it's been redelivered too many times?
+  authentication-authorization:
+    - Walk me through how your client authenticated, from connect to the first message.
+    - Show me an ACL profile blocking a publish. Where do you see the reason?
+    - How would you connect the broker to this customer's identity provider?
+    - What changes about authentication and authorization in Solace Cloud?
   micro-integrations:
     - Where does your micro-integration run, and who operates it?
     - How did you map the source system's data onto topics?
