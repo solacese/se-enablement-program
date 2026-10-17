@@ -1,0 +1,58 @@
+id: platform-90-day
+title: The Solace Platform in 90 Days
+short_title: Technical path
+duration_days: 90
+goal: >
+  A hands-on technical path from broker fundamentals to the full Solace Platform.
+  The order follows how an SE presents the platform: the runtime first, then what
+  developers and architects build with, then operations, AI and partner channels.
+
+blocks:
+  - id: block-1
+    number: 1
+    days: [1, 30]
+    theme: Core platform
+    tagline: Run it, harden it, take it to the cloud.
+    modules: [broker-fundamentals, ha-dr, solace-cloud]
+    checkpoint: day-30
+  - id: block-2
+    number: 2
+    days: [31, 60]
+    theme: Build and integrate
+    tagline: Every protocol, every system, one governed design.
+    modules: [apis-protocols, micro-integrations, event-portal]
+    checkpoint: day-60
+  - id: block-3
+    number: 3
+    days: [61, 90]
+    theme: Operate and extend
+    tagline: See everything, add AI, sell through partners.
+    modules: [insights-distributed-tracing, solace-agent-mesh, sap-aem, boomi-event-streams]
+    checkpoint: day-90-capstone
+
+# Tasks the app surfaces on day 1 (or another due day) outside any module.
+setup_tasks:
+  - id: enterprise-eval-broker
+    title: Request an Enterprise evaluation broker
+    due_day: 1
+    needed_by_day: 15
+    description: >
+      HA, DR and mesh exercises need an Enterprise evaluation broker, not the free
+      Standard edition. Request it in week 1 so it's in hand before the HA and DR module.
+    states: [not_started, requested, received]
+
+# Week 12 covers both OEM channels. The SE picks a primary one; the other is self-paced.
+oem:
+  week: 12
+  modules: [sap-aem, boomi-event-streams]
+  note: >
+    If one OEM channel matters more in your pipeline, spend the full week there and
+    do the other self-paced.
+
+outcomes:
+  - Install and operate an Event Broker in any environment, and explain and demo HA vs. DR
+  - Position self-managed, Solace Cloud and hybrid deployments
+  - Build across protocols and APIs, bring existing systems in with Micro-Integrations, and govern designs in Event Portal
+  - Show observability with Insights and Distributed Tracing
+  - Build an agentic AI workflow with Solace Agent Mesh
+  - Explain how SAP AEM and Boomi Event Streams Enterprise relate to the direct Solace offering

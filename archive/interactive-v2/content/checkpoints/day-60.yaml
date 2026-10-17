@@ -1,0 +1,28 @@
+id: day-60
+title: Day 60 checkpoint
+track: platform-90-day
+day: 60
+format: quiz
+evaluator_role: Senior SE
+description: >
+  A one-on-one live quiz with a senior SE covering APIs and protocols,
+  Micro-Integrations and Event Portal.
+modules: [apis-protocols, micro-integrations, event-portal]
+retake_window_days: 10
+general_questions:
+  - Walk me through your setup. What's running where?
+  - What broke along the way, and how did you fix it?
+  - Which part of this block would you demo first to an architect, and why?
+question_bank:
+  apis-protocols:
+    - Show me one event published over one protocol and consumed over two others. What does the broker do in between?
+    - When would you recommend a native SMF API over an open protocol like MQTT or AMQP?
+    - How do message properties and payloads map across protocols?
+  micro-integrations:
+    - Where does your micro-integration run, and who operates it?
+    - How did you map the source system's data onto topics?
+    - What happens if the source system is unavailable?
+  event-portal:
+    - Walk me through your application domain. Why did you draw the boundaries there?
+    - How did discovery work, and what did it find that you hadn't designed?
+    - How would a governance team use the catalog day to day?

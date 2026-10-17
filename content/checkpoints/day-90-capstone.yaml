@@ -1,0 +1,38 @@
+id: day-90-capstone
+title: Day 90 capstone
+track: platform-90-day
+day: 90
+format: capstone
+evaluator_role: Senior SE
+description: >
+  An end-to-end, customer-style demo spanning the full platform. It also covers the
+  Insights, Distributed Tracing, Agent Mesh and OEM modules.
+modules:
+  - broker-fundamentals
+  - ha-dr
+  - solace-cloud
+  - apis-protocols
+  - micro-integrations
+  - event-portal
+  - insights-distributed-tracing
+  - solace-agent-mesh
+  - sap-aem
+  - boomi-event-streams
+retake_window_days: 14
+general_questions:
+  - Set the scene. Who is the customer and what problem are we solving?
+  - Take me from an event entering the mesh to it being observed, traced, and acted on by an agent.
+  - What would you leave out of this demo for a 30-minute executive meeting?
+question_bank:
+  insights-distributed-tracing:
+    - Show me the alert you triggered. What threshold did you set, and why?
+    - How would a customer enable Distributed Tracing for one of their flows?
+  solace-agent-mesh:
+    - Which event triggers your multi-agent workflow, and how do the agents coordinate?
+    - Why does an event broker make agentic AI better than point-to-point calls?
+  sap-aem:
+    - How would you position AEM to an SAP-led customer?
+    - What does a customer buy from SAP vs. from Solace directly?
+  boomi-event-streams:
+    - How would you position Event Streams Enterprise to a Boomi customer?
+    - Where does Event Streams Enterprise fit alongside Boomi's integration platform?

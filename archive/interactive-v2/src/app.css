@@ -1,0 +1,152 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/figtree';
+@plugin '@tailwindcss/typography';
+
+/*
+ * Solace palette. Classic Green #00C895, Deep Blue #093B5F, Dark Blue #03213B,
+ * greys #F4F4F4 / #D6D6D6. Green is a fill/accent colour: on white, text uses
+ * green-700 (#007A5B, 5.3:1) to meet WCAG AA. On dark blue, green-500 is 7.4:1.
+ * The pitch track uses an amber accent so the two tracks are told apart at a glance.
+ */
+@theme {
+	--font-sans: 'Figtree Variable', Figtree, 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+	--color-green-50: #e8fbf5;
+	--color-green-100: #c4f4e4;
+	--color-green-200: #8ee9cc;
+	--color-green-300: #52dcb2;
+	--color-green-400: #1fd09f;
+	--color-green-500: #00c895;
+	--color-green-600: #00a57b;
+	--color-green-700: #007a5b;
+	--color-green-800: #005c45;
+	--color-green-900: #003d2e;
+
+	--color-deep: #093b5f;
+	--color-deep-400: #1d5f8f;
+	--color-deep-300: #4a86b3;
+	--color-deep-100: #d7e6f2;
+	--color-night: #03213b;
+	--color-night-900: #021628;
+	--color-mist: #f4f4f4;
+	--color-fog: #d6d6d6;
+	--color-slate-ink: #4a5a6a;
+
+	--color-pitch-50: #fff7e8;
+	--color-pitch-100: #ffeac2;
+	--color-pitch-300: #ffc96b;
+	--color-pitch-400: #ffb547;
+	--color-pitch-500: #f59e0b;
+	--color-pitch-700: #8a5200;
+	--color-pitch-800: #6b3f00;
+
+	--animate-float: float 8s ease-in-out infinite;
+	--animate-pulse-ring: pulse-ring 2.4s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
+	--animate-shimmer: shimmer 3s linear infinite;
+	--animate-rise: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+
+	@keyframes float {
+		0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+		50% { transform: translate3d(2%, -4%, 0) scale(1.06); }
+	}
+	@keyframes pulse-ring {
+		0% { transform: scale(0.8); opacity: 0.7; }
+		100% { transform: scale(2.4); opacity: 0; }
+	}
+	@keyframes shimmer {
+		from { background-position: 0% 50%; }
+		to { background-position: 200% 50%; }
+	}
+	@keyframes rise {
+		from { opacity: 0; transform: translateY(18px); }
+		to { opacity: 1; transform: translateY(0); }
+	}
+}
+
+@layer base {
+	html {
+		-webkit-font-smoothing: antialiased;
+		scroll-behavior: smooth;
+	}
+	body {
+		@apply bg-mist font-sans text-night;
+	}
+	:focus-visible {
+		@apply outline-2 outline-offset-2 outline-green-500;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		*, *::before, *::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+			scroll-behavior: auto !important;
+		}
+	}
+}
+
+@utility card {
+	@apply rounded-2xl border border-fog/70 bg-white shadow-[0_1px_2px_rgba(3,33,59,0.04),0_8px_24px_-12px_rgba(3,33,59,0.12)];
+}
+
+@utility btn {
+	@apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition
+		disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+@utility btn-primary {
+	@apply btn bg-green-500 text-night shadow-[0_6px_20px_-6px_rgba(0,200,149,0.6)] hover:bg-green-400 hover:shadow-[0_8px_28px_-6px_rgba(0,200,149,0.75)];
+}
+
+@utility btn-dark {
+	@apply btn bg-night text-white hover:bg-deep;
+}
+
+@utility btn-ghost {
+	@apply btn border border-fog bg-white text-night hover:border-deep-300 hover:bg-deep-100/40;
+}
+
+@utility btn-pitch {
+	@apply btn bg-pitch-400 text-night shadow-[0_6px_20px_-6px_rgba(255,181,71,0.7)] hover:bg-pitch-300;
+}
+
+@utility btn-sm {
+	@apply px-3 py-1.5 text-xs;
+}
+
+@utility label {
+	@apply mb-1.5 block text-sm font-semibold text-night;
+}
+
+@utility hint {
+	@apply mt-1 text-xs text-slate-ink;
+}
+
+@utility input {
+	@apply block w-full rounded-xl border border-fog bg-white px-3.5 py-2.5 text-sm text-night shadow-inner shadow-night/[0.02]
+		placeholder:text-slate-ink/60 focus:border-green-500 focus:ring-4 focus:ring-green-500/15 focus:outline-none;
+}
+
+@utility eyebrow {
+	@apply text-xs font-bold tracking-[0.18em] uppercase;
+}
+
+@utility text-gradient {
+	@apply bg-gradient-to-r from-green-300 via-green-500 to-[#5fd4ff] bg-clip-text text-transparent;
+	background-size: 200% auto;
+}
+
+@utility grid-bg {
+	background-image:
+		linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+	background-size: 48px 48px;
+}
+
+@layer components {
+	.code-block {
+		@apply my-4 overflow-x-auto rounded-xl bg-night p-4 text-[13px] leading-relaxed text-green-100;
+	}
+	.prose :where(code):not(:where(pre *)) {
+		@apply rounded-md bg-deep-100/60 px-1.5 py-0.5 font-medium text-deep before:content-none after:content-none;
+	}
+}

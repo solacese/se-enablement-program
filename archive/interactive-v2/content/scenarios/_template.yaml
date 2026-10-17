@@ -1,0 +1,41 @@
+# Template for a pitch bootcamp scenario. Managers fill these fields in the app
+# when assigning a scenario. Real contact details are entered at runtime and stored
+# in the database. Never commit customer or contact data to this repo.
+fields:
+  - id: vertical
+    label: Vertical
+    type: select
+    required: true
+  - id: company
+    label: Company
+    type: text
+    required: true
+  - id: company_profile
+    label: Company profile
+    type: textarea
+    hint: What the company does, size, recent initiatives.
+  - id: contact_name
+    label: Contact name
+    type: text
+    required: true
+  - id: contact_title
+    label: Contact title
+    type: text
+  - id: met_at
+    label: Where you met
+    type: text
+    hint: Conference or event name.
+  - id: contact_profile
+    label: Contact profile
+    type: textarea
+    hint: Role, responsibilities, and anything they said about their priorities.
+
+verticals:
+  - Capital markets
+  - Airlines
+  - IIoT / Manufacturing
+  - Financial services
+  - Retail
+  - Telecommunications
+  - Automotive
+  - Public sector

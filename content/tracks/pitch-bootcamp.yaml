@@ -1,0 +1,129 @@
+id: pitch-bootcamp
+title: New SE Pitch Bootcamp
+short_title: Pitch bootcamp
+start_day: 30
+duration_weeks: 4
+goal: >
+  Sharpen pitching and discovery skills by combining research on a real scenario with
+  live discovery and pitch practice, graded against a defined rubric.
+evaluators: Managers and sales
+
+components:
+  - id: research
+    number: 1
+    title: Scenario & Research
+    focus: Preparation
+    description: Given a vertical and a real contact, research the company and the contact's stated priorities.
+  - id: discovery
+    number: 2
+    title: Discovery in Practice
+    focus: Live discovery
+    description: Restate the contact's priorities, run structured discovery live, and adjust the pitch plan based on what discovery surfaces.
+  - id: pitch
+    number: 3
+    title: Pitch & Objection Handling
+    focus: Delivery
+    description: Present the deck sections most relevant to the scenario, handle objections live, and close with a clear next step.
+
+evaluation_flow:
+  - title: Scenario Assignment
+    description: Vertical, company and real contact profile, shared in advance.
+  - title: Research & Prep
+    description: Research the company and prepare to restate priorities.
+  - title: Live Session
+    description: Discovery, relevant pitch delivery, and objection handling, all live.
+  - title: Scored Debrief
+    description: A manager and a sales representative score against the rubric and give feedback.
+
+# Baseline → Coaching → Practice → Graded Eval. `week` is relative to the bootcamp start.
+stages:
+  - id: baseline
+    title: Baseline
+    week: 1
+    scored: true
+    description: A first full run-through so evaluators can see where you start.
+  - id: coaching
+    title: Coaching
+    week: 2
+    scored: false
+    description: Focused coaching on the weakest rubric dimensions from the baseline.
+  - id: practice
+    title: Practice
+    week: 3
+    scored: true
+    description: A second scored run, applying the coaching.
+  - id: graded
+    title: Graded Eval
+    week: 4
+    scored: true
+    graded: true
+    description: The graded evaluation. A total of 16/20 or more graduates you from the bootcamp.
+
+rubric:
+  max_per_dimension: 5
+  graduation_target: 16
+  dimensions:
+    - id: priority_restatement
+      title: Priority Restatement
+      proficient: Restates the contact's priorities accurately
+    - id: discovery_quality
+      title: Discovery Quality
+      proficient: Asks open, research-based questions
+    - id: pitch_relevance
+      title: Pitch Relevance
+      proficient: Ties deck sections to stated priorities
+    - id: objection_handling
+      title: Objection Handling
+      proficient: Addresses objections without deflecting
+  scale:
+    1: Not yet demonstrated
+    2: Emerging
+    3: Developing
+    4: Proficient
+    5: Exemplary
+
+# Below the graduation target opens coaching on the weakest dimensions, then a retake window.
+# The retake window closes coaching_days + window_days after the failed eval.
+retake:
+  coaching_focus_count: 2
+  coaching_days: 7
+  window_days: 10
+
+# The deck lives on Solace Hub; the app links to it instead of storing a copy.
+# Replace `url` with the current Solace Hub link for the pitch deck.
+deck:
+  title: Solace Platform pitch deck
+  url: https://hub.solace.com/
+  sections:
+    - Why event-driven, why now
+    - The Solace Platform at a glance
+    - Event Broker and event mesh
+    - Hybrid and multi-cloud deployment
+    - Event Portal and governance
+    - Micro-Integrations and connectivity
+    - Observability and Distributed Tracing
+    - Solace Agent Mesh and agentic AI
+    - Customer stories by vertical
+    - Partner channels (SAP, Boomi)
+    - Proposed next steps
+
+research_prompts:
+  - id: company_overview
+    title: Company overview
+    hint: Business model, size, recent news, strategic initiatives, and current technology landscape.
+  - id: stated_priorities
+    title: The contact's stated priorities
+    hint: What did they tell you at the conference? What do their talks, posts or job description say they care about?
+  - id: use_cases
+    title: Likely event-driven use cases
+    hint: Where would real-time events change outcomes for this business? Think order flow, IoT telemetry, customer notifications, AI agents.
+  - id: hypotheses
+    title: Hypotheses to test
+    hint: What do you believe is true but need discovery to confirm? Each one should be something you can be wrong about.
+
+common_objections:
+  - We already use Kafka for streaming.
+  - Our cloud provider has a native messaging service.
+  - This sounds like another platform our team has to run.
+  - We don't have budget for this until next fiscal year.
+  - How is this different from an iPaaS?

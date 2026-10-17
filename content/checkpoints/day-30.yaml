@@ -1,0 +1,30 @@
+id: day-30
+title: Day 30 checkpoint
+track: platform-90-day
+day: 30
+format: quiz
+evaluator_role: Senior SE
+description: >
+  A one-on-one live quiz with a senior SE covering Event Broker, HA/DR and Solace Cloud.
+  Expect to share your screen and walk through what you built.
+modules: [broker-fundamentals, ha-dr, solace-cloud]
+retake_window_days: 10
+general_questions:
+  - Walk me through your setup. What's running where?
+  - What broke along the way, and how did you fix it?
+  - If a customer asked "why Solace instead of what we have today", what would you say based on what you built?
+question_bank:
+  broker-fundamentals:
+    - What's the difference between a topic subscription and a queue, and when would you recommend each?
+    - Explain how wildcards work in a Solace topic hierarchy. What do `*` and `>` match?
+    - What happens to a persistent message if no consumer is connected?
+    - How would you design a topic hierarchy for an order-management system?
+  ha-dr:
+    - What is the role of the monitor node in an HA group?
+    - How is HA different from DR, and what does a customer get from each?
+    - Show me how you proved there was no message loss on failover.
+    - What would you change to move this setup from a laptop to production?
+  solace-cloud:
+    - How did you connect your cloud service to your local broker? What's flowing in each direction?
+    - When would you position Solace Cloud vs. self-managed vs. hybrid?
+    - What does the customer manage vs. what does Solace manage in Solace Cloud?
