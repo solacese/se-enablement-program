@@ -35,6 +35,7 @@ question_bank:
   sap-aem:
     - How would you position AEM to an SAP-led customer?
     - What does a customer buy from SAP vs. from Solace directly?
+    - How does SAP AEM adapter settings inpact the connenction and consumer count on a connected broker?
   boomi-event-streams:
     - How would you position Event Streams Enterprise to a Boomi customer?
     - Where does Event Streams Enterprise fit alongside Boomi's integration platform?
