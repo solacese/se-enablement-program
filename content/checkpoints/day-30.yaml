@@ -24,6 +24,7 @@ question_bank:
     - How is HA different from DR, and what does a customer get from each?
     - Show me how you proved there was no message loss on failover.
     - What would you change to move this setup from a laptop to production?
+    - What are the differences between controlled vs. uncontrolled DR and how you handle both scenarios?
   solace-cloud:
     - How did you connect your cloud service to your local broker? What's flowing in each direction?
     - When would you position Solace Cloud vs. self-managed vs. hybrid?
