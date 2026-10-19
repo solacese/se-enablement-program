@@ -36,7 +36,7 @@ Solace offering. Summarise the differences in your notes.
 
 <Step id="integration" title="Try a light integration" minutes="120">
 
-Connect a flow in SAP Integration Suite to an AEM or Solace broker and exchange an event.
+Connect a flow in SAP Integration Suite to an AEM or Solace broker and exchange an event. Understand the behavior of the broker(e.g. connections/consumer counts) when changing the settings of the adapter. Understand how the number of worker nodes in Integration Suite impacts connections.
 
 </Step>
 
