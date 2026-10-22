@@ -6,7 +6,7 @@ format: capstone
 evaluator_role: Senior SE
 description: >
   An end-to-end, customer-style demo spanning the full platform. It also covers the
-  Insights, Distributed Tracing, Agent Mesh and OEM modules.
+  Insights, Distributed Tracing, infrastructure automation, Agent Mesh and OEM modules.
 modules:
   - broker-fundamentals
   - ha-dr
@@ -17,6 +17,7 @@ modules:
   - micro-integrations
   - event-portal
   - insights-distributed-tracing
+  - infrastructure-automation
   - solace-agent-mesh
   - sap-aem
   - boomi-event-streams
@@ -29,6 +30,10 @@ question_bank:
   insights-distributed-tracing:
     - Show me the alert you triggered. What threshold did you set, and why?
     - How would a customer enable Distributed Tracing for one of their flows?
+  infrastructure-automation:
+    - Show me a Terraform plan for a change to your Message VPN. What would you review before applying it?
+    - When would a customer call SEMPv2 directly instead of using Terraform?
+    - How would broker configuration move from dev to production in this customer's pipeline?
   solace-agent-mesh:
     - Which event triggers your multi-agent workflow, and how do the agents coordinate?
     - Why does an event broker make agentic AI better than point-to-point calls?

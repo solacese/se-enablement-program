@@ -1,35 +1,38 @@
 ---
 id: queue-types
-title: Queue types and consumer patterns
+title: Queue types, consumer patterns and replay
 track: platform-90-day
 block: 2
 order: 5
 weeks: [6]
-estimated_hours: 6
+estimated_hours: 8
 icon: layers
 summary: >
   Work through exclusive and non-exclusive queues, competing consumers, and
-  partitioned queues, then handle messages that can't be processed.
+  partitioned queues, handle messages that can't be processed, and replay past
+  messages with Message Replay.
 why_it_matters: >
   "How do we scale consumers without losing order?" comes up in almost every
   architecture review. Knowing which queue type fits each pattern, and showing it
   live, is how you answer it with confidence.
 prerequisites: [apis-protocols]
 exit_proof: >
-  An exclusive queue failing over between consumers and a non-exclusive queue
-  load-balancing across competing consumers, with a clear recommendation for when
-  to use each.
+  An exclusive queue failing over between consumers, a non-exclusive queue
+  load-balancing across competing consumers, and a replay of past messages into a
+  queue, with a clear recommendation for when to use each.
 evidence_types: [notes, screenshot, config, recording_link]
 checkpoint: day-60
 prep_questions:
   - When would you choose an exclusive queue over a non-exclusive one?
   - What happens to message order with competing consumers, and how do partitioned queues help?
   - What happens to a message that a consumer keeps failing to process?
+  - When would a customer use Message Replay, and what does the replay log cost them?
 ---
 
 A queue's access type decides how messages are shared between the consumers bound
 to it. In this module you'll run the same workload against each queue type and see
-the difference in delivery, ordering and failover.
+the difference in delivery, ordering and failover, then use Message Replay to
+deliver past messages again.
 
 <Step id="exclusive" title="Fail over with an exclusive queue" minutes="60">
 
@@ -108,6 +111,33 @@ blocking the consumers.
 
 </Step>
 
+<Step id="replay" title="Replay past messages with Message Replay" minutes="90">
+
+Enable Message Replay on your Message VPN and give the replay log enough spool to
+hold a few hundred messages. Publish a numbered sequence to `acme/orders/>`, then
+consume it from a queue.
+
+Now start a replay on that queue, first from the beginning of the replay log and
+then from a point in time partway through the sequence. The broker redelivers the
+stored messages to the queue in their original order.
+
+<Verify>
+
+The consumer receives the earlier messages again, starting from the point you chose,
+in the original sequence.
+
+</Verify>
+
+<Callout title="Customer angle" tone="tip">
+
+Replay helps a new consumer catch up on history, recovers from a bug that processed
+messages wrongly, and gives test environments real traffic. The replay log uses
+spool space, so size it for how far back the customer needs to go.
+
+</Callout>
+
+</Step>
+
 <Step id="choose" title="Write the decision guide" minutes="30">
 
 In your notes, write a short table you could share with a customer:
@@ -115,6 +145,7 @@ In your notes, write a short table you could share with a customer:
 - **Exclusive:** strict order, one active consumer, automatic standby.
 - **Non-exclusive:** scale-out processing, no ordering guarantee.
 - **Partitioned:** scale-out with order kept per key.
+- **Message Replay:** redeliver past messages to catch up, recover or test.
 
 Add one real customer scenario for each row. You'll walk through it at the Day 60
 checkpoint.

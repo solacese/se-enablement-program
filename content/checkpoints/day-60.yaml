@@ -23,6 +23,7 @@ question_bank:
     - When would you recommend a non-exclusive queue, and what does the customer give up?
     - How do partitioned queues keep order per key while still scaling out?
     - Where does a message go after it's been redelivered too many times?
+    - Show me a replay from a point in time. What decides how far back you can go?
   authentication-authorization:
     - Walk me through how your client authenticated, from connect to the first message.
     - Show me an ACL profile blocking a publish. Where do you see the reason?

@@ -3,7 +3,7 @@ id: boomi-event-streams
 title: Boomi Event Streams Enterprise
 track: platform-90-day
 block: 3
-order: 12
+order: 13
 weeks: [12]
 estimated_hours: 6
 icon: handshake

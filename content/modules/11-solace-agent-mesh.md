@@ -3,16 +3,16 @@ id: solace-agent-mesh
 title: Solace Agent Mesh
 track: platform-90-day
 block: 3
-order: 10
-weeks: [10, 11]
-estimated_hours: 14
+order: 11
+weeks: [11]
+estimated_hours: 10
 icon: sparkles
 summary: >
   Stand up Agent Mesh, configure agents, and connect them over the event broker.
 why_it_matters: >
   Every customer is asking about agentic AI. Showing agents that are triggered by,
   and coordinate over, real-time events is where Solace is clearly different.
-prerequisites: [insights-distributed-tracing]
+prerequisites: [infrastructure-automation]
 exit_proof: Live multi-agent workflow triggered by events.
 evidence_types: [notes, screenshot, config, recording_link]
 checkpoint: day-90-capstone

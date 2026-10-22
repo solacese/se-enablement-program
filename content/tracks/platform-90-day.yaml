@@ -27,7 +27,7 @@ blocks:
     days: [61, 90]
     theme: Operate and extend
     tagline: See everything, add AI, sell through partners.
-    modules: [insights-distributed-tracing, solace-agent-mesh, sap-aem, boomi-event-streams]
+    modules: [insights-distributed-tracing, infrastructure-automation, solace-agent-mesh, sap-aem, boomi-event-streams]
     checkpoint: day-90-capstone
 
 # Tasks the app surfaces outside any module (none for now).
@@ -47,5 +47,6 @@ outcomes:
   - Build across protocols and APIs, bring existing systems in with Micro-Integrations, and govern designs in Event Portal
   - Choose the right queue type for each consumer pattern, and secure clients with authentication and ACLs
   - Show observability with Insights and Distributed Tracing
+  - Automate broker configuration with SEMPv2 and manage it as code with Terraform
   - Build an agentic AI workflow with Solace Agent Mesh
   - Explain how SAP AEM and Boomi Event Streams Enterprise relate to the direct Solace offering
