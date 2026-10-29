@@ -34,7 +34,7 @@ Start the free Standard edition in Docker.
 
 ```bash
 docker run -d --name solace \
-  -p 8080:8080 -p 55555:55555 -p 1883:1883 -p 5672:5672 -p 9000:9000 \
+  -p 8080:8080 -p 55555:55555 -p 1883:1883 -p 5672:5672 -p 9000:9000 -p 8080:8080 \
   --shm-size=1g \
   --env username_admin_globalaccesslevel=admin \
   --env username_admin_password=admin \
